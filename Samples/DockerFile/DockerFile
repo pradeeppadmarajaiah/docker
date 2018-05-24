@@ -1,0 +1,12 @@
+FROM ubuntu
+MAINTAINER pradeep_p_13@hotmail.com
+RUN apt-get update
+RUN mkdir -p /tmp/pradeep/test
+RUN chmod 777 /tmp/pradeep/test
+COPY test.txt /tmp/pradeep/test
+ADD sample.tar /tmp/pradeep/test
+ADD https://www.w3.org/TR/PNG/iso_8859-1.txt /tmp/pradeep/test
+WORKDIR /tmp/pradeep/test 
+ADD https://www.w3.org/TR/PNG/iso_8859-1.txt download.txt
+CMD ["ls","-lrt","/tmp/pradeep/test"]
+
